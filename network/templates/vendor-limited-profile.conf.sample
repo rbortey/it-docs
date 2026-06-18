@@ -1,0 +1,18 @@
+# WireGuard limited profile template
+# Issued by IT support after access approval.
+# This template is not a complete active profile; each vendor receives a unique key and peer address.
+
+[Interface]
+PrivateKey = <issued-per-vendor>
+Address = 192.168.220.<assigned>/32
+DNS = 172.18.18.100
+
+[Peer]
+PublicKey = <gateway-public-key>
+Endpoint = vpn.adinkracorp.com:51820
+AllowedIPs = 10.20.30.90/32
+PersistentKeepalive = 25
+
+# Scope note:
+# Vendor limited profiles should be enforced on the gateway by peer tunnel IP.
+# Do not rely only on AllowedIPs for access control.
